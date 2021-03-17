@@ -13,16 +13,19 @@
                     <h5>Kategori Member</h5>
                 </div>
                 <div class="card-body">
-                    <!-- <a href="/member/category/tambah" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalTambah">Input Kategori</a> -->
-                    <button id="tambahData" type="button" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Add</button>
-                    <!-- <a href="/member/category/recycle" class="btn btn-outline-warning float-right">Recycle Bin</a> -->
-                    <div class="btn-group float-right" role="group">
-                        <button id="btnDel" type="button" class="btn btn-outline-danger" data-url="{{ url('/member/category/hapusAll') }}"><i class="fas fa-minus-circle"></i> Delete</button>
-                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#modalRecycleBin"><i class="fas fa-trash-alt"></i> Recycle Bin</button>
+                    <div class="col-md-12">
+                        <!-- <a href="/member/category/tambah" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalTambah">Input Kategori</a> -->
+                        <button id="tambahData" type="button" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Add</button>
+                        <!-- <a href="/member/category/recycle" class="btn btn-outline-warning float-right">Recycle Bin</a> -->
+                        <div class="btn-group float-right" role="group">
+                            <button id="btnDel" type="button" class="btn btn-outline-danger" data-url="{{ url('/member/category/hapusAll') }}"><i class="fas fa-minus-circle"></i> Delete</button>
+                            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#modalRecycleBin"><i class="fas fa-trash-alt"></i> Recycle Bin</button>
+                        </div>
                     </div>
+
                     <br/>
                     <br/>
-                    <div style="overflow:auto">
+                    <div style="overflow:auto" class="col-md-12">
                     <table id="myTable" class="table table-bordered table-hover table-striped display">
                         <thead>
                             <tr>
@@ -79,13 +82,15 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                            <div class="col-md-12">
                                 <button id="btnRestore" type="button" class="btn btn-outline-primary" data-url="{{ url('/member/category/restoreAll') }}"><i class="fas fa-undo-alt"></i> Restore</button>
                                 <div class="btn-group float-right" role="group">
                                     <button id="btnDelPermanentAll" type="button" class="btn btn-outline-danger" data-url="{{ url('/member/category/hapuspermanenAll') }}"><i class="fas fa-fire"></i> Permanently Delete</button>
                                 </div>
-                                <br/>
-                                <br/>
-                            <div style="overflow:auto">
+                            </div>
+                            <br/>
+                            <br/>
+                            <div style="overflow:auto" class="col-md-12">
                                 <table id="myTableRecycle" class="table table-bordered table-hover table-striped display">
                                     <thead>
                                         <tr>

@@ -7,10 +7,13 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-            <button id="btnRestore" type="button" class="btn btn-outline-primary" data-url="{{ url('/buku/restoreAll') }}"><i class="fas fa-undo-alt"></i> Restore</button>
-            <div class="btn-group float-right" role="group">
-                <button id="btnDelPermanentAll" type="button" class="btn btn-outline-danger" data-url="{{ url('/buku/hapuspermanenAll') }}"><i class="fas fa-fire"></i> Permanently Delete</button>
+            <div class="col-md-12">
+                <button id="btnRestore" type="button" class="btn btn-outline-primary" data-url="{{ url('/buku/restoreAll') }}"><i class="fas fa-undo-alt"></i> Restore</button>
+                <div class="btn-group float-right" role="group">
+                    <button id="btnDelPermanentAll" type="button" class="btn btn-outline-danger" data-url="{{ url('/buku/hapuspermanenAll') }}"><i class="fas fa-fire"></i> Permanently Delete</button>
+                </div>
             </div>
+            
             <br/>
             <br/>
             <div style="overflow:auto">
