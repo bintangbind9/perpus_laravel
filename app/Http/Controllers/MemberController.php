@@ -68,7 +68,7 @@ class MemberController extends Controller
         {
             $member = member::where('status', 'Y')->get();
             // $member = member::find(1);
-            return view('member\index', compact('member'));
+            return view('member.index', compact('member'));
         }
         else
         {
@@ -81,8 +81,8 @@ class MemberController extends Controller
         if (Auth::check())
         {
             $memberRecycle = member::where('status', 'N')->get();
-            // return view('member\recycle', ['memberRecycle' => $memberRecycle]);
-            return view('member\recycle', compact('memberRecycle'));
+            // return view('member.recycle', ['memberRecycle' => $memberRecycle]);
+            return view('member.recycle', compact('memberRecycle'));
         }
         else
         {
@@ -99,7 +99,7 @@ class MemberController extends Controller
                 ->select(DB::raw('id, nama'))
                 ->where('status', 'Y')
                 ->get();
-            return view('member\tambah', compact('kode', 'kategori'));
+            return view('member.tambah', compact('kode', 'kategori'));
         }
         else
         {
@@ -209,7 +209,7 @@ class MemberController extends Controller
                 $filefoto = '/' . $member->foto;
             }
             $fotosrc = $folderPath . $filefoto;
-            return view('member\edit', compact('member', 'kategori', 'fotosrc'));
+            return view('member.edit', compact('member', 'kategori', 'fotosrc'));
             // return response()->json([
             //     'data' => $member
             // ]);
@@ -379,7 +379,7 @@ class MemberController extends Controller
     // https://www.nicesnippets.com/blog/laravel-crop-image-before-upload-using-cropper-js
     public function crop()
     {
-        return view('cropper/index');
+        return view('cropper.index');
     }
 
     public function cropupload(Request $request)

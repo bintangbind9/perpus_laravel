@@ -38,7 +38,7 @@ class KembaliController extends Controller
             // ->leftjoin('kembali', 'pinjam.id', '=', 'kembali.pinjam_id')
             // ->get();
             $pinjam = pinjam::get();
-            return view('kembali\index', compact('pinjam'));
+            return view('kembali.index', compact('pinjam'));
         }
         else
         {
@@ -51,7 +51,7 @@ class KembaliController extends Controller
         if (Auth::check())
         {
             $detail = pinjam_detail::where('pinjam_id', $id)->get();
-            return view('kembali\pinjamdetail', compact('detail'));
+            return view('kembali.pinjamdetail', compact('detail'));
         }
         else
         {
@@ -97,7 +97,7 @@ class KembaliController extends Controller
             }
 
             // $buku = $pinjam[0]->pinjam_detail;
-            return view('kembali\accept', compact('pinjam', 'denda', 'dontaccept'));
+            return view('kembali.accept', compact('pinjam', 'denda', 'dontaccept'));
         }
         else
         {
@@ -142,7 +142,7 @@ class KembaliController extends Controller
             $kembali = kembali::get();
             // $countdata = $kembali->count();
 
-            return view('kembali\kas', compact('kembali'));
+            return view('kembali.kas', compact('kembali'));
         }
         else
         {
@@ -160,7 +160,7 @@ class KembaliController extends Controller
             // $pdf = PDF::loadview('kembali\kas_pdf', compact('kembali'));
             // return $pdf->download('Report_Kas_Perpustakaan.pdf');
             // return $pdf->stream();
-            return view('kembali\kas_pdf', compact('kembali'));
+            return view('kembali.kas_pdf', compact('kembali'));
         }
         else
         {

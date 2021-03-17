@@ -23,21 +23,21 @@ class KategoriController extends Controller
         // {
         //     abort(404);
         // }
-        // return view('kategori\kategori', ['kategori' => $kategori, 'kategoriRecycle' => $kategoriRecycle, 'kategoriEdit' => $kategoriEdit]);
-        return view('kategori\kategori', compact('kategori', 'kategoriRecycle'));
+        // return view('kategori.kategori', ['kategori' => $kategori, 'kategoriRecycle' => $kategoriRecycle, 'kategoriEdit' => $kategoriEdit]);
+        return view('kategori.kategori', compact('kategori', 'kategoriRecycle'));
     }
 
     public function recycle()
     {
     	// $kategoriRecycle = kategori::where('status', 'N')->get();
-    	// return view('kategori\kategori', ['kategoriRecycle' => $kategoriRecycle]);
+    	// return view('kategori.kategori', ['kategoriRecycle' => $kategoriRecycle]);
     }
 
     public function tambah()
     {
         if (Auth::check())
         {
-            return view('kategori\kategori_tambah');
+            return view('kategori.kategori_tambah');
         }
         else
         {
@@ -100,7 +100,7 @@ class KategoriController extends Controller
         {
             $kategori = kategori::find($id);
 
-            return view('kategori\kategori_editt', ['kategoriEdit' => $kategori]);
+            return view('kategori.kategori_editt', ['kategoriEdit' => $kategori]);
             // return response()->json([
             //     'data' => $kategori
             // ]);

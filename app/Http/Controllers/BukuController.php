@@ -40,7 +40,7 @@ class BukuController extends Controller
         if (Auth::check())
         {
             $buku = buku::where('status', 'Y')->get();
-            return view('buku\index', compact('buku'));
+            return view('buku.index', compact('buku'));
         }
         else
         {
@@ -53,8 +53,8 @@ class BukuController extends Controller
         if (Auth::check())
         {
             $bukuRecycle = buku::where('status', 'N')->get();
-            // return view('buku\recycle', ['bukuRecycle' => $bukuRecycle]);
-            return view('buku\recycle', compact('bukuRecycle'));
+            // return view('buku.recycle', ['bukuRecycle' => $bukuRecycle]);
+            return view('buku.recycle', compact('bukuRecycle'));
         }
         else
         {
@@ -67,7 +67,7 @@ class BukuController extends Controller
         if (Auth::check())
         {
             $kode = $this->bukucode();
-            return view('buku\tambah', compact('kode'));
+            return view('buku.tambah', compact('kode'));
         }
         else
         {
@@ -143,7 +143,7 @@ class BukuController extends Controller
                 $filefoto = '/' . $buku->gambar;
             }
             $fotosrc = $folderPath . $filefoto;
-            return view('buku\edit', compact('buku', 'fotosrc'));
+            return view('buku.edit', compact('buku', 'fotosrc'));
             // return response()->json([
             //     'data' => $buku
             // ]);

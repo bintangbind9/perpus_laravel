@@ -59,7 +59,7 @@ class PinjamController extends Controller
         if (Auth::check())
         {
             $pcode = $this->pinjamcode();
-            return view('pinjam\index', compact('pcode'));
+            return view('pinjam.index', compact('pcode'));
         }
         else
         {
@@ -80,7 +80,7 @@ class PinjamController extends Controller
             // ->where('pinjam_cart.user_id', $user)
             // ->join('buku', 'buku.id', '=', 'pinjam_cart.buku_id')->get();
             $cart = pinjam_cart::where('user_id', $user)->get();
-            return view('pinjam\cart', compact('cart'));
+            return view('pinjam.cart', compact('cart'));
         }
         else
         {
@@ -93,7 +93,7 @@ class PinjamController extends Controller
         if (Auth::check())
         {
             $member = member::where('status', 'Y')->get();
-            return view('pinjam\member', compact('member'));
+            return view('pinjam.member', compact('member'));
         }
         else
         {
@@ -110,7 +110,7 @@ class PinjamController extends Controller
             // $buku = DB::table("buku")->whereNotIn('id', explode(",", $ids))->where('status', 'Y')->get();
             // $buku = buku::whereNotIn('id', explode(",", $ids))->where('status', 'Y')->get();
             // return response()->json(['success'=>"Please Select The Book!"]);
-            return view('pinjam\buku', compact('buku'));
+            return view('pinjam.buku', compact('buku'));
         }
         else
         {
@@ -262,7 +262,7 @@ class PinjamController extends Controller
                 }
             }
             $done = $total - $pending;
-            return view('pinjam\report', compact('pinjam', 'total', 'pending', 'done'));
+            return view('pinjam.report', compact('pinjam', 'total', 'pending', 'done'));
         }
         else
         {
@@ -284,7 +284,7 @@ class PinjamController extends Controller
                 $dontaccept = 1;
             }
 
-            return view('pinjam\reportdetail', compact('pinjam', 'dontaccept'));
+            return view('pinjam.reportdetail', compact('pinjam', 'dontaccept'));
         }
         else
         {
@@ -305,7 +305,7 @@ class PinjamController extends Controller
                 }
             }
             $done = $total - $pending;
-            return view('pinjam\report_pdf', compact('pinjam', 'total', 'pending', 'done'));
+            return view('pinjam.report_pdf', compact('pinjam', 'total', 'pending', 'done'));
         }
         else
         {
